@@ -1,11 +1,11 @@
-import React, { Component } from 'react'
+import React, {Component} from 'react'
 import ReactDOM from 'react-dom'
-import style from 'index'
+import styles from './index.css'
 
-class App extends React {
+class App extends Component {
   render(){
     return (
-      <div>
+      <div> 
         Hello World!
       </div>
     )

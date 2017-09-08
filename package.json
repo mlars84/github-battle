@@ -2,6 +2,15 @@
   "name": "github-battle",
   "version": "1.0.0",
   "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server"
+  },
+  "babel": {
+    "presets": [
+      "env",
+      "react"
+    ]
+  },
   "license": "MIT",
   "dependencies": {
     "react": "^15.6.1",
