@@ -5,8 +5,8 @@ import styles from './index.css'
 class App extends Component {
   render(){
     return (
-      <div> 
-        Hello World!
+      <div>
+        Hello React Training vids!
       </div>
     )
   }
