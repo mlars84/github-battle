@@ -55,3 +55,83 @@ the component because it'll warn you if you use a component incorrectly.
     - true
   - You should always add PropType validation to your component if that component is accepting props
     - true
+### this keyword
+- this allows us to reuse functions with different context
+
+- implicit binding
+- explicit binding
+- new binding
+- window binding
+
+- Where is this function invoked?
+
+```sayName = (name) => {
+  console.log('Hello ' + name)
+}
+
+sayName('Matt')
+```
+
+
+- this is similar to an argument in that you won't know what it is
+- until it is invoked. aka name from sayName()
+
+- Implicit binding
+- Left of the dot at Call Time
+
+```let me = {
+  name: 'Matt',
+  age: 33,
+  sayName: function(){
+    console.log(this.name)
+  }
+}
+
+me.sayName()
+```
+- we have the function invokation (sayName()) and if we look to the left of
+- the dot (me) it's as if we did me.name
+
+```sayNameMixin = (obj) => {
+   obj.sayName = function(){
+     console.log(this.name)
+   }
+}
+
+let me2 = {
+  name: 'Matt',
+  age: 33
+}
+
+let you = {
+  name: 'Emily',
+  age: 35
+}
+
+sayNameMixin(me2)
+sayNameMixin(you)
+
+me2.sayName()
+you.sayName()
+
+let Person = (name, age) => {
+  return {
+    name: name,
+    age: age,
+    sayName: function() {
+      console.log(this.name)
+    },
+    mother: {
+      name: 'Vicky',
+      sayName: function() {
+      console.log(this.name)
+    }
+    }
+  }
+}
+
+let Jim = Person('Jim', 42)
+
+Jim.sayName()
+Jim.mother.sayName()
+```
