@@ -2,17 +2,63 @@ import React, {Component} from 'react'
 import ReactDOM from 'react-dom'
 import styles from './index.css'
 
-class App extends Component {
-  render(){
+class Users extends React.Component {
+  render() {
+
+    let friends = this.props.list.filter(function(user) {
+      return user.friend === true
+    })
+
+    let nonFriends = this.props.list.filter(function(user) {
+      return user.friend !== true
+    })
+
+
     return (
       <div>
-        Hello React Training vids!
+        <h1>Friends</h1>
+        <ul>
+          {friends.map(function(user) {
+            return <li key={user.name}> {user.name} </li>
+          })}
+        </ul>
+
+        <hr />
+
+        <h1> Non Friends </h1>
+        <ul>
+          {nonFriends.map(function(user) {
+            return <li key={user.name}> {user.name} </li>
+          })}
+        </ul>
       </div>
     )
   }
 }
 
 ReactDOM.render(
-  <App />,
+  <Users list={[
+    { name: 'Tyler', friend: true },
+    { name: 'Ryan', friend: true },
+    { name: 'Michael', friend: false },
+    { name: 'Mikenzi', friend: false },
+    { name: 'Jessica', friend: true },
+    { name: 'Dan', friend: false } ]}
+  />,
   document.getElementById('root')
-)
+);
+
+// class App extends Component {
+//   render(){
+//     return (
+//       <div>
+//         Hello React Training vids!
+//       </div>
+//     )
+//   }
+// }
+//
+// ReactDOM.render(
+//   <App />,
+//   document.getElementById('root')
+// )
