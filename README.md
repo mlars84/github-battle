@@ -55,17 +55,19 @@ the component because it'll warn you if you use a component incorrectly.
     - true
   - You should always add PropType validation to your component if that component is accepting props
     - true
-### this keyword
-- this allows us to reuse functions with different context
+### `this` keyword
+- `this` allows us to reuse functions with different context
+- Four types of binding:
+  - implicit binding
+  - explicit binding
+  - new binding
+  - window binding
 
-- implicit binding
-- explicit binding
-- new binding
-- window binding
-
+### Implicit
 - Where is this function invoked?
 
-```sayName = (name) => {
+```
+sayName = (name) => {
   console.log('Hello ' + name)
 }
 
@@ -79,7 +81,8 @@ sayName('Matt')
 - Implicit binding
 - Left of the dot at Call Time
 
-```let me = {
+```
+let me = {
   name: 'Matt',
   age: 33,
   sayName: function(){
@@ -92,7 +95,8 @@ me.sayName()
 - we have the function invokation (sayName()) and if we look to the left of
 - the dot (me) it's as if we did me.name
 
-```sayNameMixin = (obj) => {
+```
+sayNameMixin = (obj) => {
    obj.sayName = function(){
      console.log(this.name)
    }
@@ -135,3 +139,26 @@ let Jim = Person('Jim', 42)
 Jim.sayName()
 Jim.mother.sayName()
 ```
+### Explicit
+- .call(), .apply(), .bind()
+
+- .call()
+```
+let sayName = function() {
+    console.log('My name is ' + this.name + '. I am ' + this.age + ' years old.' )
+  }
+
+let stacey = {
+  name: 'Stacey',
+  age: 34
+}
+sayName.call(stacey)
+```
+- .apply() is the same thing, but instead of passing in arguments one by one,
+you can pass in an array of arguments and it parses it for us.
+
+- .bind() is similar to .call(), except returns a new function instead of invoking
+the original.
+
+- They all let us explicitly state what the `this` keyword is going to be in any
+given function. 
