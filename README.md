@@ -161,4 +161,36 @@ you can pass in an array of arguments and it parses it for us.
 the original.
 
 - They all let us explicitly state what the `this` keyword is going to be in any
-given function. 
+given function.
+
+### `new` binding
+- `new` keyword binding - new binding rule states that when a function is invoked with the new keyword
+- the this keyword inside that function is bound to the new object being constructed
+
+```
+var Animal = function(color, name, type){
+  //this = {}
+  this.color = color
+  this.name = name
+  this.type = type
+}
+
+var zebra = new Animal('black and white', 'Gerald', 'Zebra')
+console.log(zebra)
+```
+
+### `window` binding
+- if no other rules apply, then the `this` key word is going to default to the window object,
+- unless you're in strict mode and then it's going to be undefinied.
+
+```
+var sayAge = function() {
+  console.log(this.age)
+}
+
+var me = {
+  age: 33
+}
+
+sayAge()
+```
