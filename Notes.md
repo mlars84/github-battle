@@ -182,3 +182,11 @@ var me = {
 
 sayAge()
 ```
+
+### Popular component
+- `this.updateLanguage = this.updateLanguage.bind(this)`
+- Problem is that we don't know what the `this` keyword is going to be bound to
+until updateLanguage is invoked.
+- bind() takes in a context and returns a brand new function with the `this` keyword
+bound to whatever we pass in. Now this.updateLanguage will always be called with
+correct context.
