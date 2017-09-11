@@ -190,3 +190,7 @@ until updateLanguage is invoked.
 - bind() takes in a context and returns a brand new function with the `this` keyword
 bound to whatever we pass in. Now this.updateLanguage will always be called with
 correct context.
+
+### Stateless Functional Components in React
+- If you're using React correctly, you're going to notice you have a lot of components that simply take in some data via props and output some UI - that is, components with just a render method.
+- 
