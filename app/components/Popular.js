@@ -50,12 +50,12 @@ function RepoGrid(props) {
 
 RepoGrid.proptypes = {
   repos: PropTypes.array.isRequired
-}
+}//end RepoGrid PropTypes
 
 SelectLanguage.propTypes = {
   selectedLanguage: PropTypes.string.isRequired,
   onSelect: PropTypes.func.isRequired
-}//end PropTypes
+}//end SelectLanguage PropTypes
 
 class Popular extends Component{
   constructor (props) {
@@ -78,7 +78,6 @@ class Popular extends Component{
         repos: null
       }
     })
-
     api.fetchPopularRepos(lang)
       .then(function (repos) {
         this.setState(function () {
@@ -97,11 +96,11 @@ class Popular extends Component{
           onSelect={this.updateLanguage}
         />
         {!this.state.repos
-          ? <p>LOADING...</p>
+          ? <p>LOADING . . .</p>
           : <RepoGrid repos={this.state.repos} />}
       </div>
     )
   }//end render method
-}//end Popular class
+}//end Popular Component
 
 export default Popular
