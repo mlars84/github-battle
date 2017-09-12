@@ -193,4 +193,17 @@ correct context.
 
 ### Stateless Functional Components in React
 - If you're using React correctly, you're going to notice you have a lot of components that simply take in some data via props and output some UI - that is, components with just a render method.
+
+### React Life Cycle Events
+- `componentWillReceiveProps`: times when you want to execute some code whenever your
+component receives new props.
+- `shouldComponentUpdate`: only re-render if something changes. returns a boolean,
+if that bool is true, that component will re-render. if false, the component will not.
+- `componentDidMount`: invoked by React whenever the components mounts to the screen
+
+## Two things to think about when building a React App:
+  1 - What does my specific state look like?
+  2 - What does my UI look like?
+- Because they are seperate, all we have to do is build out our UI and then from there,
+manage our state. As the state changes, the UI will automatically be updated.
 - 
