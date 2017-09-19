@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 
 
-function PlayerPreview (props) {
+const PlayerPreview = (props) => {
   return (
     <div>
       <div className='column'>
@@ -43,7 +43,7 @@ class PlayerInput extends React.Component {
   handleChange(event) {
     let  value = event.target.value
 
-    this.setState(function () {
+    this.setState(() => {
       return {
         username: value
       }
@@ -104,7 +104,7 @@ class Battle extends React.Component {
     this.handleReset = this.handleReset.bind(this)
   }
   handleSubmit(id, username) {
-    this.setState(function () {
+    this.setState(() => {
       let  newState = {}
       newState[id + 'Name'] = username
       newState[id + 'Image'] = 'https://github.com/' + username + '.png?size=200'
@@ -112,7 +112,7 @@ class Battle extends React.Component {
     })
   }
   handleReset(id) {
-    this.setState(function () {
+    this.setState(() => {
       let  newState = {}
       newState[id + 'Name'] = ''
       newState[id + 'Image'] = null

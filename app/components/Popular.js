@@ -3,8 +3,8 @@ import PropTypes from 'prop-types'
 import api from '../utils/api'
 
 //Stateless Functional Component
-function SelectLanguage (props) {
-    const languages = ['All', 'JavaScript', 'Ruby', 'Java', 'CSS', 'Python']
+const SelectLanguage = (props) => {
+    let languages = ['All', 'JavaScript', 'Ruby', 'Java', 'CSS', 'Python']
 
     return (
       <ul className='languages'>
@@ -22,7 +22,7 @@ function SelectLanguage (props) {
     )
 }//end SelectLangu age class
 
-function RepoGrid(props) {
+const RepoGrid = (props) => {
   console.log('props =>', props)
    return (
      <ul className="popular-list">
@@ -80,7 +80,7 @@ class Popular extends Component{
     })
     api.fetchPopularRepos(lang)
       .then(function (repos) {
-        this.setState(function () {
+        this.setState(() => {
           return {
             repos: repos
           }
