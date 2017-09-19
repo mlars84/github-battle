@@ -1,9 +1,11 @@
 import React, { Component } from 'react'
 import Home from './Home'
 import Battle from './Battle'
+import Results from './Results'
 import Popular from './Popular'
 import { BrowserRouter, Route } from 'react-router-dom'
 import Nav from './Nav'
+
 
 
 class App extends Component {
@@ -13,7 +15,8 @@ class App extends Component {
         <div className='container'>
           <Nav />
           <Route exact path='/' component={ Home } />
-          <Route path='/battle' component={ Battle } />
+          <Route exact path='/battle' component={ Battle } />
+          <Route path='/battle/results' component={ Results } />
           <Route path='/popular' component={ Popular } />
         </div>
       </BrowserRouter>
