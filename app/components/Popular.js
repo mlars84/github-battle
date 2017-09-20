@@ -20,7 +20,7 @@ const SelectLanguage = (props) => {
         })}
       </ul>
     )
-}//end SelectLangu age class
+}//end SelectLanguage class
 
 const RepoGrid = (props) => {
   console.log('props =>', props)

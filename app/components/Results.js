@@ -13,6 +13,7 @@ class Results extends Component {
       console.log('results', results)
     })
   }
+
   render() {
     return (
       <div>Results</div>

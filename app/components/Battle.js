@@ -21,7 +21,7 @@ const PlayerPreview = (props) => {
       </button>
     </div>
   )
-}
+}//end PlayerPreview
 
 PlayerPreview.propTypes = {
   avatar: PropTypes.string.isRequired,
@@ -39,7 +39,8 @@ class PlayerInput extends React.Component {
 
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
-  }
+  }//end constructor
+
   handleChange(event) {
     let  value = event.target.value
 
@@ -48,7 +49,8 @@ class PlayerInput extends React.Component {
         username: value
       }
     })
-  }
+  }//end handleChange
+
   handleSubmit(event) {
     event.preventDefault()
 
@@ -56,7 +58,8 @@ class PlayerInput extends React.Component {
       this.props.id,
       this.state.username
     )
-  }
+  }//end handleSubmit
+
   render() {
     return (
       <form className='column' onSubmit={this.handleSubmit}>
@@ -102,7 +105,8 @@ class Battle extends React.Component {
 
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleReset = this.handleReset.bind(this)
-  }
+  }//end constructor
+
   handleSubmit(id, username) {
     this.setState(() => {
       let  newState = {}
@@ -110,7 +114,8 @@ class Battle extends React.Component {
       newState[id + 'Image'] = 'https://github.com/' + username + '.png?size=200'
       return newState
     })
-  }
+  }//end handleSubmit
+
   handleReset(id) {
     this.setState(() => {
       let  newState = {}
@@ -118,7 +123,8 @@ class Battle extends React.Component {
       newState[id + 'Image'] = null
       return newState
     })
-  }
+  }//end handleReset
+
   render() {
     let  match = this.props.match
     let  playerOneName = this.state.playerOneName
@@ -172,6 +178,6 @@ class Battle extends React.Component {
       </div>
     )
   }
-}
+}//end Battle
 
 module.exports = Battle
