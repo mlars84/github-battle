@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import api from '../utils/api'
+import Loading from './Loading'
 
 //Stateless Functional Component
 const SelectLanguage = (props) => {
@@ -96,7 +97,7 @@ class Popular extends Component{
           onSelect={this.updateLanguage}
         />
         {!this.state.repos
-          ? <p>LOADING . . .</p>
+          ? <Loading />
           : <RepoGrid repos={this.state.repos} />}
       </div>
     )
